@@ -19,6 +19,23 @@
   $reqcat->execute(array());
   $cathegorie = $reqcat->fetchAll();
 
+  $etat = 1;
+  $request = connect()->prepare("SELECT date_retour FROM empreunter WHERE id_adherant = ? and etat=?");
+  $request->execute(array($_SESSION['id'], $etat));
+  $date_retour = $request->fetchAll();
+
+  $date_jour = date('y-m-s h:i:s');
+  
+  $time = strtotime('2001-11-14 -3 years -7 months -5 days');
+  var_dump($time);die();
+
+  if(($time) == 2){
+    echo "Il vous reste 2 jours pour retourner le livre";
+  }
+
+  
+  
+
      //var_dump($req['titre']);die();
      ?>
     

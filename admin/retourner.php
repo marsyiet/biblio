@@ -11,9 +11,9 @@
     $date_empreunt = date('y-m-d h:i:s');
     //$date_retour = $date_empreunt->add(new DateInterval('P15D'));
     $newDate = new DateTime($date_empreunt);
-    $newDate->add(new DateInterval('P15D'));
+    $newDate->add(new DateInterval('P2D'));
     $date_retour = $newDate->format('d-m-y h:i:s');
-    
+    //var_dump($date_retour);die();
     
     $requete = connect()->prepare("SELECT * FROM livres WHERE id= ?"); 
     $requete->execute(array($id_livre));

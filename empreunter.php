@@ -10,9 +10,9 @@
     $date_empreunt = date('y-m-d h:i:s');
     //$date_retour = $date_empreunt->add(new DateInterval('P15D'));
     $newDate = new DateTime($date_empreunt);
-    $newDate->add(new DateInterval('P15D'));
-    $date_retour = $newDate->format('d-m-y h:i:s');
-    
+    $newDate->add(new DateInterval('P2D'));
+    $date_retour = $newDate->format('y-m-d h:i:s');
+    //var_dump($date_retour);die();
     
     //echo $date;
     
